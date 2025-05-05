@@ -109,12 +109,12 @@
             const reader = new FileReader();
             reader.onload = function (event) {
               const base64Image = event.target.result;
-              const qrText = `name= ${username}&img= ${base64Image}`;
+              const qrText = `name=${username}&img=${base64Image}`;
               generateQRCode(qrText);
             };
             reader.readAsDataURL(imageUpload);
           } else {
-            const qrText = `Username: ${username}`;
+            const qrText = `name=${username}`;
             generateQRCode(qrText);
           }
 
